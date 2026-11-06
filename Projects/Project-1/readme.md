@@ -1,108 +1,98 @@
-# PR. 1 Fundamental Booster – Excel Project
+# PR. 1 Fundamental Booster -- Excel Project
 
-## Introduction
-This project demonstrates the use of Microsoft Excel formulas and functions for working with student grades, sales records, and employee information. It provides practical experience with calculations, logical conditions, lookup functions, text functions, date functions, and dynamic references.
+## Project Overview
 
-## Workbook Structure
+This project is an Excel/Google Sheets practice workbook that
+demonstrates spreadsheet formulas and data-analysis features. It
+contains three datasets: **Students Grade**, **Sales Data**, and
+**Employee Data**, plus a **Formula Guide** sheet.
+
+## Workbook Sheets
 
 ### 1. Students Grade
-This worksheet demonstrates:
-- `SUM` – Calculates total marks.
-- `AVERAGE` – Calculates average marks.
-- `IF` – Assigns grades or pass/fail results.
-- `AND` and `OR` – Check multiple conditions.
-- `COUNTIF` – Counts records matching a condition.
-- `AVERAGEIF` – Calculates an average based on a condition.
-- `FILTER` – Displays rows matching a condition.
 
-**Example formulas:**
-```excel
-=SUM(C2:E2)
-=AVERAGE(C2:E2)
-=IF(C2>50,"Pass","Fail")
-=IF(AND(C2>80,D2>80),"Yes","No")
-=COUNTIF(G2:G13,">60")
-=FILTER(A2:J13,G2:G13>80,"No matches")
-```
+Contains 20 student records with Student ID, Name, Math, Science,
+English, and Enrollment Date. Formula columns calculate total marks,
+average percentage, grade, and conditional checks.
+
+**Formulas demonstrated:** - `SUM` and `AVERAGE` -- calculate total and
+average marks. - Nested `IF` -- assign grades based on average marks. -
+`AND` and `OR` -- test multiple conditions. - `COUNTIF` and `COUNTIFS`
+-- count records matching conditions. - `AVERAGEIF` and `AVERAGEIFS` --
+calculate averages using criteria. - `FILTER` -- extract students whose
+average is above 80.
 
 ### 2. Sales Data
-This worksheet demonstrates:
-- `VLOOKUP` and `XLOOKUP` – Retrieve product information.
-- `INDEX`, `MATCH`, and `XMATCH` – Find matching values.
-- `SUMIFS` – Calculate sales based on multiple conditions.
-- `INDIRECT` and `OFFSET` – Create dynamic references.
-- `TEXT`, `LEFT`, `UPPER`, and `LOWER` – Manipulate text.
-- `ROUND`, `CEILING`, and `FLOOR` – Round numerical values.
 
-**Example formulas:**
-```excel
-=VLOOKUP("P103",L3:N6,3,FALSE)
-=XLOOKUP("P104",L3:L6,M3:M6,"Not found")
-=INDEX(H2:H11,MATCH(2006,A2:A11,0))
-=XMATCH("P103",L3:L6)
-=SUMIFS(H2:H11,C2:C11,"West",E2:E11,"Laptop")
-=TEXT(B2,"mmm yyyy")
-=LEFT(I2,3)
-=UPPER(I2)
-=LOWER(I2)
-=ROUND(H2,0)
-=CEILING(G2,100)
-=FLOOR(G2,100)
-```
+Contains 20 sales records with Sales ID, Product, Region, Salesperson,
+Amount, and Date. Additional columns demonstrate month extraction, sales
+classification, rounding, and lookup.
+
+**Formulas demonstrated:** - `TEXT` -- display the month from a date. -
+`IF` -- classify sales as High Sales or Low Sales. - `ROUND` -- round
+sales amounts. - `SUM`, `SUMIFS`, and `AVERAGE` -- analyze sales. -
+`VLOOKUP`, `XLOOKUP`, `INDEX`, and `MATCH` -- retrieve matching
+information. - `XMATCH` -- find a product's position. - `INDIRECT` and
+`OFFSET` -- demonstrate dynamic references and ranges. - Date
+subtraction -- calculate the number of days between dates.
+
+**Product price note:** Product prices were not included in the supplied
+Sales Data. The Product Lookup area is provided for entering actual
+prices. Add prices in the blank input cells before using the
+product-price `VLOOKUP` example.
 
 ### 3. Employee Data
-This worksheet demonstrates:
-- `VLOOKUP` and `XLOOKUP` – Find employee information.
-- `DATEDIF` and `TODAY` – Calculate age and years of service.
-- Date subtraction – Calculate the difference between dates.
-- `LEFT` and `FIND` – Extract employee first names.
-- `FILTER` – Display employees matching a condition.
-- `INDIRECT` and `OFFSET` – Create dynamic references.
 
-**Example formulas:**
-```excel
-=XLOOKUP(503,A2:A7,E2:E7,"Not found")
-=VLOOKUP(502,A2:H7,2,FALSE)
-=DATEDIF(G2,TODAY(),"Y")
-=DATEDIF(D2,TODAY(),"Y")
-=ABS(D3-D2)
-=TODAY()-D2
-=FILTER(A2:H7,E2:E7>50000,"No matches")
-=INDIRECT(K9)
-=SUM(OFFSET(E2,0,0,3,1))
-=LEFT(B2,FIND(" ",B2)-1)
-```
+Contains 20 employee records with Employee ID, Name, Department, Salary,
+and Joining Date. Additional columns calculate years of service, salary
+category, uppercase name, salary lookup, joining month, and days since
+joining.
+
+**Formulas demonstrated:** - `DATEDIF` and `TODAY` -- calculate
+completed years of service. - `IF` -- classify salary. - `UPPER` --
+convert employee names to uppercase. - `VLOOKUP` and `XLOOKUP` --
+retrieve employee details. - `INDEX` and `MATCH` -- find employee
+information. - `COUNTIF`, `AVERAGE`, and `SUMIFS` -- analyze employee
+data. - `TEXT` -- format joining dates. - `INDIRECT` and `OFFSET` --
+demonstrate dynamic references.
 
 ### 4. Formula Guide
-The Formula Guide worksheet provides a summary of the Excel functions used in this project with their purposes and examples.
 
-## Relative and Absolute Cell References
-
-**Relative Reference**
-```excel
-=C2+D2
-```
-Cell references change automatically when the formula is copied.
-
-**Absolute Reference**
-```excel
-=C2*$P$3
-```
-The `$P$3` reference remains fixed when the formula is copied.
+Includes example formulas and explanations for relative and absolute
+references, nested `IF`, `AND`/`OR`, counting and summing functions,
+lookup functions, text functions, date functions, dynamic references,
+rounding functions, and `FILTER`.
 
 ## How to Use the Workbook
-1. Open the Excel workbook in Microsoft Excel.
-2. Select the required worksheet.
-3. Enter or update the records.
-4. Apply the required formulas.
-5. Copy formulas down to other rows.
-6. Verify the results.
 
-## Compatibility
-Functions such as `XLOOKUP`, `XMATCH`, and `FILTER` require a recent version of Microsoft Excel.
+1.  Download `PR1_Fundamental_Booster_Completed.xlsx`.
+2.  Open it in Microsoft Excel or import it into Google Sheets.
+3.  Select a worksheet using the tabs at the bottom.
+4.  Review the formulas in the calculated columns and analysis sections.
+5.  Change a source value to practice and observe how formula results
+    update.
+6.  Enter actual product prices in the Product Lookup area of the Sales
+    Data sheet to test product-price lookup formulas.
+7.  Refer to the Formula Guide sheet for formula examples.
 
-## Note About Sample Data
-The solution workbook contains illustrative sample records because the assignment screenshots provided instructions but did not include the original datasets. Replace the sample records and adjust formula ranges according to the actual assignment data.
+## Notes
+
+-   Student, sales, and employee records were transcribed from the
+    screenshots supplied for this project.
+-   Formula results recalculate when opened in a spreadsheet application
+    that supports the functions used.
+-   `FILTER` and `XLOOKUP` may require a recent version of Microsoft
+    Excel or Google Sheets.
+-   Results using `TODAY()` change according to the current date.
+
+## Files
+
+-   `PR1_Fundamental_Booster_Completed.xlsx` -- completed workbook.
+-   `README.md` -- project documentation.
 
 ## Conclusion
-This project provides practical knowledge of Excel formulas and functions used for calculations, grade classification, conditional analysis, data lookup, text manipulation, date calculations, and data filtering.
+
+This project provides practical experience with spreadsheet formulas,
+conditional logic, lookups, text functions, date calculations, dynamic
+references, and filtering. It builds a foundation for working with and
+analyzing data in Excel.
